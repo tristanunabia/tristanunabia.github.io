@@ -1,5 +1,5 @@
 const rooms = [301,302,303,304,305,308];
-const teachers = ["Alminar","Baysa","Dela Cruz","Dominguez","Edquilag","Bartolome","Ibarrola","Agbayani","Teleg","Rubaya","Manliguis","Abarra", "Unabia"];
+const teachers = ["-no teacher-", "Alminar","Baysa","Dela Cruz","Dominguez","Edquilag","Bartolome","Ibarrola","Agbayani","Teleg","Rubaya","Manliguis","Abarra", "Unabia"];
 
 rooms.forEach(room => {
     let option = document.createElement("option");
@@ -22,10 +22,11 @@ const savedRows = [];
 document.getElementById("save").addEventListener("click", () => {
     let room = document.getElementById("room").value;
     let teacher = document.getElementById("teacher").value;
+    let remarks = document.getElementById("remarks").value;
     let now = new Date();
     let dateTime = now.toLocaleString();
-    savedRows.push({ room, teacher, dateTime });
-    console.log(`Saved: Room: ${room}, Teacher: ${teacher}, Date & Time: ${dateTime}`);
+    savedRows.push({ room, teacher, remarks, dateTime });
+    console.log(`Saved: Room: ${room}, Teacher: ${teacher}, Remarks: ${remarks}, Date & Time: ${dateTime}`);
 
     // Show notification
     let notification = document.createElement("div");
@@ -47,9 +48,9 @@ document.getElementById("save").addEventListener("click", () => {
 
 // Function to write savedRows to CSV and download
 function downloadSavedRowsAsCSV() {
-    let csvContent = "data:text/csv;charset=utf-8,Room,Teacher,Date & Time\n";
+    let csvContent = "data:text/csv;charset=utf-8,Room,Teacher,Remarks,Date & Time\n";
     savedRows.forEach(row => {
-        csvContent += `${row.room},${row.teacher},${row.dateTime}\n`;
+        csvContent += `${row.room},${row.teacher},${row.remarks},${row.dateTime}\n`;
     });
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");

@@ -54,7 +54,10 @@ function downloadSavedRowsAsCSV() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `checker_data_${new Date().toISOString().replace(/[:.]/g, "_")}.csv`);
+    const now = new Date();
+    const dateStr = now.toLocaleDateString().replace(/\//g, "-");
+    const timeStr = now.toLocaleTimeString().replace(/:/g, "-").replace(/\s/g, "");
+    link.setAttribute("download", `room_checker_data_${dateStr}_${timeStr}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

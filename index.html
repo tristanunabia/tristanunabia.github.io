@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tristan Unabia | Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <div class="container">
-        <div class="page-title">This is my portfolio</div>
-      </div>
-    </main>
-    <footer></footer>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room and Teacher Selection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Room and Teacher Selection</h1>
+        <div class="row g-3">
+            <!-- Room Selection -->
+            <div class="col-12">
+                <label for="room" class="form-label">Select Room</label>
+                <select name="room" id="room" class="form-select"></select>
+            </div>
+            <!-- Teacher Selection -->
+            <div class="col-12">
+                <label for="teacher" class="form-label">Select Teacher</label>
+                <select name="teacher" id="teacher" class="form-select"></select>
+            </div>
+        </div>
+        <!-- Buttons -->
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <button id="save" class="btn btn-primary px-4">Save</button>
+            <button id="download" class="btn btn-success px-4">Download CSV</button>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
